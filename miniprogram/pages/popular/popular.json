@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+      "likeCmp": "../../components/like/index",
+      "dateCmp": "../../components/date/index",
+      "movieCmp": "../../components/movie/index"
+  }
+}

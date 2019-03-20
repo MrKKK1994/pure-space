@@ -1,0 +1,9 @@
+<view class="container">
+    <view class="header">
+        <dateCmp index="{{popular.index}}"/>
+        <likeCmp class="likeCmp" isLike="{{popular.like_status}}" count="{{popular.fav_nums}}"/>
+    </view>
+    <view>
+        <movieCmp image="{{popular.image}}" content="{{popular.content}}"/>
+    </view>
+</view>
