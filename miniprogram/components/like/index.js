@@ -11,8 +11,7 @@ Component({
     /**
      * 组件的初始数据
      */
-    data: {
-    },
+    data: {},
 
     /**
      * 组件的方法列表
@@ -24,7 +23,10 @@ Component({
             this.setData({
                 count: count,
                 isLike: !isLike
-            })
+            });
+            this.triggerEvent('likeOnTap', {
+                isLike: !this.properties.isLike
+            });
         }
     }
 })

@@ -1,0 +1,5 @@
+<view class="container">
+    <image class="navi-image" src="{{isLast ? nextBtn_dis : nextBtn}}" />
+    <text class="title">{{title}}</text>
+    <image class="navi-image" src="{{isFirst ?  prevBtn_dis :  prevBtn}}" />
+</view>

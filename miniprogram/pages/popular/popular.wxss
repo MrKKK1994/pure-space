@@ -1,15 +1,24 @@
-.container{
+.container {
+    width: 100%;
     display: flex;
     flex-direction: column;
+    align-items: center;
 }
 
-.header{
+.header {
+    box-sizing: border-box;
+    width: 100%;
     display: flex;
     justify-content: space-between;
     padding: 10px 10px 5px;
     border-top: 1px solid rgb(240, 240, 240);
 }
 
-likeCmp{
-    padding-top:5px;
+likeCmp {
+    padding-top: 5px;
+}
+
+naviCmp{
+    position: absolute;
+    bottom:20px;
 }

@@ -1,9 +1,8 @@
 <view class="container">
     <view class="header">
-        <dateCmp index="{{popular.index}}"/>
-        <likeCmp class="likeCmp" isLike="{{popular.like_status}}" count="{{popular.fav_nums}}"/>
+        <dateCmp index="{{popular.index}}" />
+        <likeCmp class="likeCmp" isLike="{{popular.like_status}}" count="{{popular.fav_nums}}" bind:likeOnTap="likeTap"/>
     </view>
-    <view>
-        <movieCmp image="{{popular.image}}" content="{{popular.content}}"/>
-    </view>
+    <movieCmp image="{{popular.image}}" content="{{popular.content}}" />
+    <naviCmp isLast="{{isLast}}" isFirst="{{isFirst}}" title="{{popular.title}}" />
 </view>

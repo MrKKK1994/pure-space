@@ -1,0 +1,17 @@
+.container{
+    display: inline-flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80rpx;
+    width: 600rpx;
+}
+
+.title{
+    line-height: 80rpx;
+    font-size: 28rpx;
+}
+
+.navi-image{
+    height: 80rpx;
+    width: 80rpx;
+}

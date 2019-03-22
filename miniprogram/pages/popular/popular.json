@@ -2,6 +2,7 @@
   "usingComponents": {
       "likeCmp": "../../components/like/index",
       "dateCmp": "../../components/date/index",
-      "movieCmp": "../../components/movie/index"
+      "movieCmp": "../../components/movie/index",
+      "naviCmp": "../../components/navi/index"
   }
 }
