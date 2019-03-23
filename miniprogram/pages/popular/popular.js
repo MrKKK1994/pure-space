@@ -90,5 +90,33 @@ Page({
             id: this.data.popular._id,
             type: this.data.popular.type
         }, e.detail.isLike);
+    },
+
+    goNext(e) {
+        popularApi.changeIndex(true, this.data.popular.index, (res) => {
+            popularApi.getLikeDetail(res._id, (likeDetail) => {
+                res.fav_nums = likeDetail.fav_nums;
+                res.like_status = likeDetail.like_status;
+                this.setData({
+                    popular: res,
+                    isLast: res.index === this.data.lastestIndex,
+                    isFirst: false
+                });
+            });
+        });
+    },
+
+    goPrev(e) {
+        popularApi.changeIndex(false, this.data.popular.index, (res) => {
+            popularApi.getLikeDetail(res._id, (likeDetail) => {
+                res.fav_nums = likeDetail.fav_nums;
+                res.like_status = likeDetail.like_status;
+                this.setData({
+                    popular: res,
+                    isLast: false,
+                    isFirst: res.index === 1
+                });
+            });
+        });
     }
 })

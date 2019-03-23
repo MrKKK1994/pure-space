@@ -1,5 +1,7 @@
 <view class="container">
-    <image class="navi-image" src="{{isLast ? nextBtn_dis : nextBtn}}" />
+    <image class="navi-image" src="{{nextBtn_dis}}" hidden="{{!isLast}}" />
+    <image class="navi-image" src="{{nextBtn}}" bind:tap="goNext" hidden="{{isLast}}" />
     <text class="title">{{title}}</text>
-    <image class="navi-image" src="{{isFirst ?  prevBtn_dis :  prevBtn}}" />
+    <image class="navi-image" src="{{prevBtn_dis}}" hidden="{{!isFirst}}" />
+    <image class="navi-image" src="{{prevBtn}}" bind:tap="goPrev" hidden="{{isFirst}}" />
 </view>
