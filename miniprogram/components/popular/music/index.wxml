@@ -1,0 +1,6 @@
+<view class="container">
+    <image class="poster {{isPlay?'rotation':''}}" src="{{image}}" />
+    <image class="status" src="{{isPlay?'images/player@pause.png':'images/player@play.png'}}" bind:tap="tapBtn"/>
+    <image class="type" src="images/music@tag.png" />
+    <text class="content">{{content}}</text>
+</view>

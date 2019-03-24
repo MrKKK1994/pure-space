@@ -1,0 +1,49 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.type {
+    width: 46rpx;
+    height: 142rpx;
+    position: relative;
+    bottom: 100rpx;
+    right: 320rpx;
+}
+
+.poster {
+    width: 422rpx;
+    height: 422rpx;
+    border-radius: 50%;
+}
+
+.status {
+    width: 120rpx;
+    height: 120rpx;
+    position: relative;
+    bottom: 271rpx;
+}
+
+.content {
+    max-width: 550rpx;
+    font-size: 36rpx;
+}
+
+@-webkit-keyframes rotation {
+    from {
+        -webkit-transform: rotate(0deg);
+    }
+
+    to {
+        -webkit-transform: rotate(360deg);
+    }
+}
+
+.rotation {
+    -webkit-transform: rotate(360deg);
+    animation: rotation 12s linear infinite;
+    -moz-animation: rotation 12s linear infinite;
+    -webkit-animation: rotation 12s linear infinite;
+    -o-animation: rotation 12s linear infinite;
+}

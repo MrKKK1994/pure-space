@@ -1,17 +1,22 @@
+import {
+    popularBehavior
+} from '../popular-behavior.js';
+
+
 Component({
+    behaviors: [popularBehavior],
     /**
      * 组件的属性列表
      */
     properties: {
-        image:String,
-        content:String,
+
     },
 
     /**
      * 组件的初始数据
      */
     data: {
-        
+
     },
 
     /**

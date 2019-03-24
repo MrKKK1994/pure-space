@@ -1,8 +1,10 @@
 {
-  "usingComponents": {
-      "likeCmp": "../../components/like/index",
-      "dateCmp": "../../components/date/index",
-      "movieCmp": "../../components/movie/index",
-      "naviCmp": "../../components/navi/index"
-  }
+    "usingComponents": {
+        "likeCmp": "../../components/like/index",
+        "dateCmp": "../../components/date/index",
+        "movieCmp": "../../components/popular/movie/index",
+        "naviCmp": "../../components/navi/index",
+        "musicCmp": "../../components/popular/music/index",
+        "essayCmp": "../../components/popular/essay/index"
+    }
 }

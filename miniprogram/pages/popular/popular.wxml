@@ -3,6 +3,12 @@
         <dateCmp index="{{popular.index}}" />
         <likeCmp class="likeCmp" isLike="{{popular.like_status}}" count="{{popular.fav_nums}}" bind:likeOnTap="likeTap" />
     </view>
-    <movieCmp image="{{popular.image}}" content="{{popular.content}}" />
+    <view hidden="{{popular.type !== 100}}">
+        <movieCmp image="{{popular.image}}" content="{{popular.content}}" />
+    </view>
+    <view hidden="{{popular.type !== 300}}">
+        <essayCmp image="{{popular.image}}" content="{{popular.content}}" />
+    </view>
+    <musicCmp image="{{popular.image}}" content="{{popular.content}}" musicUrl="{{popular.url}}" title="{{popular.title}}" wx:if="{{popular.type === 200}}" />
     <naviCmp isLast="{{isLast}}" isFirst="{{isFirst}}" title="{{popular.title}}" bind:next="goNext" bind:prev="goPrev" />
 </view>
