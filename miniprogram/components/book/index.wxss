@@ -1,0 +1,45 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    width:240rpx;
+    height:360rpx;
+    box-shadow:2px 2px 3px #e3e3e3;
+    border-radius: 2px;
+}
+
+image {
+    width: 100%;
+    heiht: 100%;
+}
+
+.sub-container{
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    width: 100%;
+    bottom: 0;
+    padding: 10rpx 4rpx 10rpx 10rpx;
+    box-sizing: border-box;
+}
+
+.title{
+    font-size: 24rpx;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.author{
+    font-size:20rpx;
+    color:#999999;
+    text-overflow:ellipsis;
+    white-space: nowrap;
+}
+
+.like-count{
+    margin-top:10rpx;
+    font-size:20rpx;
+    text-align: right;
+    color:#666666;
+}
