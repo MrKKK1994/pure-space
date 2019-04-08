@@ -1,0 +1,20 @@
+<view class="container">
+    <view class="header">
+        <image src="{{book.image}}" />
+        <text>{{book.title}}</text>
+        <text>{{book.auther}}</text>
+    </view>
+    <view class="comments"></view>
+    <view class="summary">
+        <text>内容简介</text>
+        <text>{{book.summary}}</text>
+    </view>
+    <view class="book-info">
+        <text>书本信息</text>
+        <text>出版社 {{book.publisher}}</text>
+        <text>出版年 {{book.pubdate}}</text>
+        <text>页数 {{book.pages}}</text>
+        <text>定价 {{book.price}}</text>
+        <text>装帧 {{book.binding}}</text>
+    </view>
+</view>

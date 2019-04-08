@@ -1,3 +1,16 @@
 <view class="container">
-    <bookCmp book="{{books[0]}}"/>
+    <view class="header">
+        <view class="search" bind:tap="goSearch">
+            <image src="/images/icon/search.png" />
+            <text>搜索书籍</text>
+        </view>
+    </view>
+    <view class="book-box">
+        <image class="header-image" src="../../images/book/quality.png" />
+        <view class="book-container">
+            <block wx:for="{{books}}" wx:key="{{_id}}">
+                <bookCmp book="{{item}}" />
+            </block>
+        </view>
+    </view>
 </view>

@@ -28,7 +28,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 2,
 			"list": [
 				{
 					"id": -1,
@@ -40,6 +40,14 @@
 					"id": -1,
 					"name": "书单启动",
 					"pathName": "pages/book/book",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 2,
+					"name": "bookdetail",
+					"pathName": "pages/detail/detail",
+					"query": "id=5caa4658c25083531cc68d66",
 					"scene": null
 				}
 			]

@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" bind:tap="goBookDetail">
     <image class="" src="{{book.image}}"/>
     <view class="sub-container">
         <text class="title">{{book.title}}</text>

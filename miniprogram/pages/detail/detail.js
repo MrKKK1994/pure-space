@@ -10,18 +10,18 @@ Page({
      * 页面的初始数据
      */
     data: {
-        books:[]
+        book:Object
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        bookApi.getBookList().then(res => {
+        bookApi.getBookDetail(options.id).then(res => {
             this.setData({
-                books: res.data
+                book: res.data
             });
-        });
+        })
     },
 
     /**
@@ -71,9 +71,5 @@ Page({
      */
     onShareAppMessage: function () {
 
-    },
-
-    goSearch() {
-        
     }
 })
