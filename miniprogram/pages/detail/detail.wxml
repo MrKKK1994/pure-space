@@ -1,20 +1,46 @@
 <view class="container">
     <view class="header">
         <image src="{{book.image}}" />
-        <text>{{book.title}}</text>
-        <text>{{book.auther}}</text>
+        <text class="title">{{book.title}}</text>
+        <text class="author">{{book.author}}</text>
     </view>
-    <view class="comments"></view>
-    <view class="summary">
-        <text>内容简介</text>
-        <text>{{book.summary}}</text>
+    <view class="sub-container">
+        <text class="head-text">短评</text>
+        <view class=""></view>
     </view>
-    <view class="book-info">
-        <text>书本信息</text>
-        <text>出版社 {{book.publisher}}</text>
-        <text>出版年 {{book.pubdate}}</text>
-        <text>页数 {{book.pages}}</text>
-        <text>定价 {{book.price}}</text>
-        <text>装帧 {{book.binding}}</text>
+    <view class="sub-container">
+        <text class="head-text">内容简介</text>
+        <text class="content" decode="{{true}}">{{util.format(book.summary)}}</text>
+    </view>
+    <view class="sub-container">
+        <text class="head-text">书本信息</text>
+        <view class="book-detail">
+            <view class="item">
+                <text>出版社</text>
+                <text>出版年</text>
+                <text>页数</text>
+                <text>定价</text>
+                <text>装帧</text>
+            </view>
+            <view class="item darker">
+                <text>{{book.publisher}}</text>
+                <text>{{book.pubdate}}</text>
+                <text>{{book.pages}}</text>
+                <text>{{book.price}}</text>
+                <text>{{book.binding}}</text>
+            </view>
+        </view>
     </view>
 </view>
+<wxs module="util">
+    var format = function(text){
+        if(!text){
+            return
+        }
+        var reg =  getRegExp('/n','g');
+        return  text.replace(reg,'\n&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;');
+    }
+    module.exports={
+        format:format
+    }
+</wxs>
