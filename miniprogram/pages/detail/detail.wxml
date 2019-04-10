@@ -6,7 +6,18 @@
     </view>
     <view class="sub-container">
         <text class="head-text">短评</text>
-        <view class=""></view>
+        <view class="tag-container" wx:if="{{tags.length}}">
+            <block wx:for="{{tags}}" wx:key="{{}}">
+                <tagCmp tag="{{item}}">
+                    <text slot="likeCount" class="like-count">{{'+' + item.likecount}}</text>
+                </tagCmp>
+            </block>
+        </view>
+        <view class="tag-container" wx:else>
+            <text class="like-count">
+                暂无短评
+            </text>
+        </view>
     </view>
     <view class="sub-container">
         <text class="head-text">内容简介</text>

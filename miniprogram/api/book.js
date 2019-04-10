@@ -8,4 +8,10 @@ export class BookApi {
     getBookDetail(id) {
         return db.collection('book').doc(id).get();
     }
+
+    getBookTag(bookId) {
+        return db.collection('comment').where({
+            bookid: bookId
+        }).get();
+    }
 }

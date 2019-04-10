@@ -91,3 +91,22 @@
 .darker {
     color: rgb(80, 80, 80);
 }
+
+.tag-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+tagCmp:nth-child(1)>view {
+    background-color: rgb(255, 250, 221);
+}
+
+tagCmp:nth-child(2)>view {
+    background-color: rgb(239, 250, 255);
+}
+
+.like-count {
+    font-size: 20rpx;
+    color: rgb(160, 160, 160);
+}

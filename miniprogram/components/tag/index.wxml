@@ -1,0 +1,4 @@
+<view class="container">
+    <text class="content">{{tag.content}}</text>
+    <slot name="likeCount"></slot>
+</view>

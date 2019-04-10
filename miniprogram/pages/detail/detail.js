@@ -10,7 +10,8 @@ Page({
      * 页面的初始数据
      */
     data: {
-        book:Object
+        book: Object,
+        tags: []
     },
 
     /**
@@ -21,7 +22,15 @@ Page({
             this.setData({
                 book: res.data
             });
-        })
+        });
+        bookApi.getBookTag(options.id).then(res => {
+            if (res.data[0]) {
+                res.data[0].tag.sort((a, b) => b.likecount - a.likecount);
+                this.setData({
+                    tags: res.data[0].tag
+                })
+            }
+        });
     },
 
     /**
