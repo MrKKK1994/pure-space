@@ -89,7 +89,7 @@ Page({
         likeApi.changeLikeStatus({
             id: this.data.popular._id,
             type: this.data.popular.type
-        }, e.detail.isLike);
+        }, e.detail.isLike,'popular');
     },
 
     goNext(e) {

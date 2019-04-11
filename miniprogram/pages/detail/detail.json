@@ -1,5 +1,7 @@
 {
   "usingComponents": {
-      "tagCmp":"../../components/tag/index"
+      "tagCmp":"../../components/tag/index",
+      "likeCmp":"../../components/like/index",
+      "maskCmp":"../../components/mask/index"
   }
 }

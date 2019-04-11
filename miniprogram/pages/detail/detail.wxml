@@ -14,9 +14,7 @@
             </block>
         </view>
         <view class="tag-container" wx:else>
-            <text class="like-count">
-                暂无短评
-            </text>
+            <text class="like-count">暂无短评</text>
         </view>
     </view>
     <view class="sub-container">
@@ -42,6 +40,42 @@
             </view>
         </view>
     </view>
+</view>
+<view class="footer">
+    <view class="input" bind:tap="showInput">
+        <text>输入短评</text>
+    </view>
+    <view>
+        <likeCmp isLike="{{book.like_status}}" count="{{book.fav_nums}}" bind:likeOnTap="likeTap" />
+    </view>
+    <view class="share">
+        <image src="../../images/icon/share.png" />
+    </view>
+</view>
+<view class="comment-container" wx:if="{{onInput}}">
+    <view class="comment-header">
+        <text wx:if="{{tags.length}}" class="notice">可点击标签+1</text>
+        <text wx:else class="notice">暂无标签</text>
+        <text bind:tap="cancelInput">取消</text>
+    </view>
+    <view class="tag-container container-padding" wx:if="{{tags.length}}">
+        <block wx:for="{{tags}}" wx:key="{{}}">
+            <block wx:if="{{index < 3}}">
+                <tagCmp tag="{{item}}" bind:tagOnTap="postComment">
+                    <text slot="likeCount" class="like-count">{{'+' + item.likecount}}</text>
+                </tagCmp>
+            </block>
+        </block>
+    </view>
+    <view class="tag-container  container-padding" wx:else>
+        <text class="like-count">暂无短评</text>
+    </view>
+    <view class="input-container">
+        <input placeholder="短评不超过12个字" bindconfirm="postComment" value=""/>
+    </view>
+</view>
+<view wx:if="{{onInput}}">
+    <maskCmp />
 </view>
 <wxs module="util">
     var format = function(text){

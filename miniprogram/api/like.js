@@ -4,12 +4,12 @@ const _ = db.command;
 export class LikeApi {
     openid = wx.getStorageSync('openid');
 
-    changeLikeStatus(data, likeStatus) {
+    changeLikeStatus(data, likeStatus,collection) {
         db.collection('userLike').where({
             _openid: this.openid
         }).get({
             success: (res) => {
-                likeStatus ? this.cancelLike(res, data) : this.addLike(res, data);
+                likeStatus ? this.cancelLike(res, data, collection) : this.addLike(res, data, collection);
             },
             fail: function (err) {
                 console.error(err);
@@ -17,8 +17,8 @@ export class LikeApi {
         });
     }
 
-    addLike(res, data) {
-        db.collection('popular').doc(data.id).update({
+    addLike(res, data, collection) {
+        db.collection(collection).doc(data.id).update({
             data: {
                 like_status: _.set(true),
                 fav_nums: _.inc(1)
@@ -40,7 +40,7 @@ export class LikeApi {
         }
     }
 
-    cancelLike(res, data) {
+    cancelLike(res, data, collection) {
         let newLikes = res.data[0].likes.filter(item => item.id !== data.id);
         db.collection('userLike').doc(res.data[0]._id).update({
             data: {
@@ -48,7 +48,7 @@ export class LikeApi {
             }
         });
 
-        db.collection('popular').doc(data.id).update({
+        db.collection(collection).doc(data.id).update({
             data: {
                 like_status: _.set(false),
                 fav_nums: _.inc(-1)
