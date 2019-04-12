@@ -18,10 +18,15 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
+        wx.showLoading({
+            mask: true
+        });
+
         bookApi.getBookList().then(res => {
             this.setData({
                 books: res.data
             });
+            wx.hideLoading();
         });
     },
 

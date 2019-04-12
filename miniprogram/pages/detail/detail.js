@@ -17,27 +17,33 @@ Page({
         book: Object,
         tags: [],
         onInput: false,
-        commentId: String
+        commentId: undefined
     },
 
     /**
      * 生命周期函数--监听页面加载
      */
     onLoad: function (options) {
-        bookApi.getBookDetail(options.id).then(res => {
-            this.setData({
-                book: res.data
-            });
+        wx.showLoading({
+            mask: true
         });
-        bookApi.getBookTag(options.id).then(res => {
-            if (res.data[0]) {
-                res.data[0].tag.sort((a, b) => b.likecount - a.likecount);
+
+        const bookDetail = bookApi.getBookDetail(options.id);
+        const bookTag = bookApi.getBookTag(options.id);
+
+        Promise.all([bookDetail, bookTag]).then(res => {
+            this.setData({
+                book: res[0].data
+            });
+            if (res[1].data[0]) {
+                res[1].data[0].tag.sort((a, b) => b.likecount - a.likecount);
                 this.setData({
-                    tags: res.data[0].tag.slice(0, 10),
-                    commentId: res.data[0]._id
+                    tags: res[1].data[0].tag.slice(0, 10),
+                    commentId: res[1].data[0]._id
                 })
             }
-        });
+            wx.hideLoading();
+        })
     },
     likeTap(event) {
         likeApi.changeLikeStatus({
@@ -87,7 +93,8 @@ Page({
 
         bookApi.postComment({
             id: this.data.commentId,
-            tag: newTags
+            tag: newTags,
+            bookId:this.data.book._id
         }).then(res => {
             this.setData({
                 onInput: false

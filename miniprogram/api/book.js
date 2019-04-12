@@ -17,9 +17,14 @@ export class BookApi {
     }
 
     postComment(data) {
-        return db.collection('comment').doc(data.id).update({
+        return data.id ? db.collection('comment').doc(data.id).update({
             data: {
                 tag: _.set(data.tag)
+            }
+        }) : db.collection('comment').add({
+            data: {
+                bookid: data.bookId,
+                tag: data.tag
             }
         })
     }
