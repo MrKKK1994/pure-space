@@ -1,0 +1,30 @@
+<view class="container">
+    <view class="header">
+        <view class="input-container">
+            <input placeholder="书籍名" value="{{keyword}}" focus="true" bindinput="changeKeyword"  bindconfirm="doSearch"/>
+            <image class="search-img" src="images/search.png" />
+            <image class="cancel-img" src="images/cancel.png" bind:tap="clearKeyword" hidden="{{keyword === ''}}" />
+        </view>
+        <text>取消</text>
+    </view>
+    <view class="tag-container">
+        <view class="title">
+            <text>历史搜索</text>
+        </view>
+        <view class="tags">
+            <block wx:for="{{history}}" wx:key="">
+                <tagCmp content="{{item}}" />
+            </block>
+        </view>
+    </view>
+    <view class="tag-container">
+        <view class="title">
+            <text>热门搜索</text>
+        </view>
+        <view class="tags">
+            <block wx:for="{{history}}" wx:key="">
+                <tagCmp content="{{item}}" />
+            </block>
+        </view>
+    </view>
+</view>

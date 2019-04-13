@@ -7,7 +7,7 @@ Component({
      * 组件的属性列表
      */
     properties: {
-        tag: Object
+        content: String
     },
 
     /**
@@ -23,7 +23,7 @@ Component({
     methods: {
         onTap(event) {
             this.triggerEvent('tagOnTap', {
-                content: this.properties.tag.content
+                content: this.properties.content
             })
         }
     }

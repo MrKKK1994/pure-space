@@ -9,4 +9,5 @@
 
 .content{
     padding-right: 10rpx;
+    color: rgb(140, 140, 140);
 }

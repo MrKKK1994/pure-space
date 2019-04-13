@@ -8,7 +8,7 @@
         <text class="head-text">短评</text>
         <view class="tag-container" wx:if="{{tags.length}}">
             <block wx:for="{{tags}}" wx:key="{{}}">
-                <tagCmp tag="{{item}}">
+                <tagCmp content="{{item}}">
                     <text slot="likeCount" class="like-count">{{'+' + item.likecount}}</text>
                 </tagCmp>
             </block>
@@ -61,7 +61,7 @@
     <view class="tag-container container-padding" wx:if="{{tags.length}}">
         <block wx:for="{{tags}}" wx:key="{{}}">
             <block wx:if="{{index < 3}}">
-                <tagCmp tag="{{item}}" bind:tagOnTap="postComment">
+                <tagCmp content="{{item}}" bind:tagOnTap="postComment">
                     <text slot="likeCount" class="like-count">{{'+' + item.likecount}}</text>
                 </tagCmp>
             </block>
