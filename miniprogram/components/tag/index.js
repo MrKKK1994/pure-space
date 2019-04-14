@@ -24,7 +24,7 @@ Component({
         onTap(event) {
             this.triggerEvent('tagOnTap', {
                 content: this.properties.content
-            })
+            });
         }
     }
 })

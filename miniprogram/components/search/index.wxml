@@ -1,30 +1,42 @@
 <view class="container">
     <view class="header">
         <view class="input-container">
-            <input placeholder="书籍名" value="{{keyword}}" focus="true" bindinput="changeKeyword"  bindconfirm="doSearch"/>
+            <input placeholder="书籍名" value="{{keyword}}" focus="true" bindinput="changeKeyword" bindconfirm="doSearch" />
             <image class="search-img" src="images/search.png" />
             <image class="cancel-img" src="images/cancel.png" bind:tap="clearKeyword" hidden="{{keyword === ''}}" />
         </view>
-        <text>取消</text>
+        <text bind:tap="onCancel">取消</text>
     </view>
-    <view class="tag-container">
-        <view class="title">
-            <text>历史搜索</text>
+    <view wx:if="{{!searched}}">
+        <view class="tag-container">
+            <view class="title">
+                <text>历史搜索</text>
+            </view>
+            <view class="tags">
+                <block wx:for="{{history}}" wx:key="">
+                    <tagCmp content="{{item}}" bind:tagOnTap="doSearch" />
+                </block>
+            </view>
         </view>
-        <view class="tags">
-            <block wx:for="{{history}}" wx:key="">
-                <tagCmp content="{{item}}" />
-            </block>
+        <view class="tag-container">
+            <view class="title">
+                <text>热门搜索</text>
+            </view>
+            <view class="tags">
+                <block wx:for="{{history}}" wx:key="">
+                    <tagCmp content="{{item}}" bind:tagOnTap="doSearch" />
+                </block>
+            </view>
         </view>
     </view>
-    <view class="tag-container">
-        <view class="title">
-            <text>热门搜索</text>
-        </view>
-        <view class="tags">
-            <block wx:for="{{history}}" wx:key="">
-                <tagCmp content="{{item}}" />
+    <view class="book-container" wx:if="{{searched}}">
+        <block wx:if="{{searchResult.length}}">
+            <block wx:for="{{searchResult}}" wx:key="{{_id}}">
+                <bookCmp book="{{item}}" />
             </block>
-        </view>
+        </block>
+        <block wx:if="{{!searchResult.length}}">
+            <text class="no-result">暂无结果</text>
+        </block>
     </view>
 </view>

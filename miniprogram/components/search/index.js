@@ -26,7 +26,9 @@ Component({
     data: {
         keyword: '',
         history: [],
-        hot: []
+        hot: [],
+        searchResult: [],
+        searched: false
     },
 
     /**
@@ -35,8 +37,13 @@ Component({
     methods: {
         clearKeyword(event) {
             this.setData({
-                keyword: ''
+                keyword: '',
+                searched: false,
+                searchResult: []
             })
+        },
+        onCancel(event) {
+            this.triggerEvent('cancelTap', {});
         },
         changeKeyword(event) {
             this.setData({
@@ -44,9 +51,18 @@ Component({
             });
         },
         doSearch(event) {
-            searchApi.search(event.detail.value).then(res => {
-                
-            })
-        }
+            wx.showLoading({
+                mask: true
+            });
+            const content = event.detail.value || event.detail.content
+            searchApi.search(content).then(res => {
+                this.setData({
+                    searchResult: res,
+                    keyword: content,
+                    searched: true
+                });
+                wx.hideLoading();
+            });
+        },
     }
 })

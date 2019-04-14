@@ -1,4 +1,4 @@
-<view class="container">
+<view class="container" wx:if="{{!isSearching}}">
     <view class="header">
         <view class="search" bind:tap="goSearch">
             <image src="/images/icon/search.png" />
@@ -14,3 +14,6 @@
         </view>
     </view>
 </view>
+<block wx:if="{{isSearching}}">
+    <searchCmp bind:cancelTap="cancelSearch" />
+</block>

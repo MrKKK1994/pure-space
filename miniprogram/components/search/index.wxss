@@ -69,8 +69,26 @@
     padding-left: 20rpx;
 }
 
-.tags{
+.tags {
     display: flex;
     flex-wrap: wrap;
     padding: 20rpx;
+}
+
+.book-container {
+    margin-top: 10rpx;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20rpx 90rpx 0;
+    justify-content: space-between;
+}
+
+.book-container bookCmp {
+    margin-bottom: 30rpx;
+}
+
+.no-result {
+    text-align: center;
+    width: 100%;
 }

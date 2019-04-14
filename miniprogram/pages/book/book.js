@@ -83,5 +83,10 @@ Page({
         this.setData({
             isSearching: true
         });
+    },
+    cancelSearch() {
+        this.setData({
+            isSearching: false
+        });
     }
 })

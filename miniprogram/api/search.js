@@ -18,14 +18,24 @@ export class SearchApi {
     }
 
     search(keyword) {
-        db.collection('book').get()
-            // .then(res => {
-            //     const result = res.data.filter(item => {
-            //         return item.title.indexOf(keyword) > -1 || item.author.indexOf(keyword) > -1
-            //     })
-            //     return new Promise((resolve, reject) => {
-            //         resolve(result);
-            //     });
-            // });
+        return new Promise((resovle, reject) => {
+            db.collection('book').get().then(res => {
+                const result = res.data.filter(item => {
+                    return item.title.indexOf(keyword) > -1 || item.author[0].indexOf(keyword) > -1
+                });
+                resovle(result);
+            }, err => {
+                reject(err);
+            });
+        });
+        // db.collection('book').get()
+        //     .then(res => {
+        //         const result = res.data.filter(item => {
+        //             return item.title.indexOf(keyword) > -1 || item.author.indexOf(keyword) > -1
+        //         })
+        //         return new Promise((resolve, reject) => {
+        //             resolve(result);
+        //         });
+        //     });
     }
 }
