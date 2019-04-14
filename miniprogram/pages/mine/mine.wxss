@@ -1,1 +1,31 @@
-/* pages/mine/mine.wxss */
+.container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.header {
+    width: 100%;
+    position: relative;
+}
+
+.bg-image {
+    width: 100%;
+    height: 574rpx;
+}
+
+.user-info {
+    position: absolute;
+    top: 260rpx;
+    left: calc(50% - 30px);
+    z-index: 100;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.avatar{
+    height: 120rpx;
+    width: 120rpx;
+    border-radius: 50%;
+}

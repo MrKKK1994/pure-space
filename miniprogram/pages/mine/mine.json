@@ -1,5 +1,6 @@
 {
-  "usingComponents": {
-      "searchCmp":"../../components/search/index"
-  }
+    "usingComponents": {
+        "likeCmp": "../../components/like/index",
+        "imgButtonCmp": "../../components/img-button/index"
+    }
 }
