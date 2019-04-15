@@ -16,9 +16,25 @@
 
 likeCmp {
     padding-top: 5px;
+    margin-right: 40rpx;
 }
 
-naviCmp{
+naviCmp {
     position: absolute;
-    bottom:20px;
+    bottom: 20px;
+}
+
+imgBtnCmp{
+    height: 72rpx;
+}
+
+.share-img {
+    width: 38rpx;
+    height: 38rpx;
+    padding-bottom: 6rpx;
+}
+
+.action-btn{
+    display: flex;
+    flex-direction: row;
 }

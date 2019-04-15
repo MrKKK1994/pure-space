@@ -20,11 +20,10 @@
     </view>
     <view class="like-box">
         <image class="like-image" src="../../images/mine/like.png" />
-        <!-- <view class="book-container">
-            <block wx:for="{{books}}" wx:key="{{_id}}">
-                <bookCmp book="{{item}}" />
+        <view class="book-container">
+            <block wx:for="{{collection}}" wx:key="{{_id}}">
+                <collectionCmp type="{{item.type}}" isLike="{{item.like_status}}" count="{{item.fav_nums}}" imageUrl="{{item.image}}" content="{{item.content}}" />
             </block>
-        </view> -->
-        <collectionCmp />
+        </view>
     </view>
 </view>

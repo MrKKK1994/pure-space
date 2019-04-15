@@ -1,11 +1,17 @@
-// pages/mine/mine.js
+import {
+    CollectionApi
+} from "../../api/collection.js";
+
+const collectionApi = new CollectionApi();
+
 Page({
 
     /**
      * 页面的初始数据
      */
     data: {
-        userInfo: null
+        userInfo: null,
+        collection: []
     },
 
     /**
@@ -24,7 +30,14 @@ Page({
                     });
                 }
             }
+        });
+
+        collectionApi.getCollection().then(res => {
+            this.setData({
+                collection: res
+            })
         })
+
     },
     getUserInfo(event) {
         if (this.data.userInfo) {

@@ -58,4 +58,8 @@ export class PopularApi {
         })
     }
 
+    getPopularDetail(id) {
+        return db.collection('popular').doc(id).get();
+    }
+
 }

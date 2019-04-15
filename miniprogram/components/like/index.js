@@ -5,7 +5,8 @@ Component({
      */
     properties: {
         isLike: Boolean,
-        count: Number
+        count: Number,
+        readOnly: Boolean
     },
 
     /**
@@ -18,6 +19,9 @@ Component({
      */
     methods: {
         handleTap(e) {
+            if (this.properties.readOnly) {
+                return 
+            }
             let isLike = this.properties.isLike;
             let count = isLike ? this.properties.count - 1 : this.properties.count + 1;
             this.setData({

@@ -48,9 +48,9 @@
     <view>
         <likeCmp isLike="{{book.like_status}}" count="{{book.fav_nums}}" bind:likeOnTap="likeTap" />
     </view>
-    <view class="share">
-        <image src="../../images/icon/share.png" />
-    </view>
+    <imgBtnCmp openType="share">
+        <image slot="butttonImage" src="../../images/icon/share.png" class="share-img" />
+    </imgBtnCmp>
 </view>
 <view class="comment-container" wx:if="{{onInput}}">
     <view class="comment-header">
@@ -71,7 +71,7 @@
         <text class="like-count">暂无短评</text>
     </view>
     <view class="input-container">
-        <input placeholder="短评不超过12个字" bindconfirm="postComment" value=""/>
+        <input placeholder="短评不超过12个字" bindconfirm="postComment" value="" />
     </view>
 </view>
 <view wx:if="{{onInput}}">

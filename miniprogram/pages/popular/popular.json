@@ -5,6 +5,7 @@
         "movieCmp": "../../components/popular/movie/index",
         "naviCmp": "../../components/navi/index",
         "musicCmp": "../../components/popular/music/index",
-        "essayCmp": "../../components/popular/essay/index"
+        "essayCmp": "../../components/popular/essay/index",
+        "imgBtnCmp":"../../components/img-button/index"
     }
 }

@@ -25,7 +25,6 @@ Page({
      */
     onLoad: function (options) {
         popularApi.getLatest(res => {
-            console.log(res);
             this.setData({
                 popular: res,
                 lastestIndex: res.index

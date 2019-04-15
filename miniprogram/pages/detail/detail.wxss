@@ -127,6 +127,10 @@ tagCmp:nth-child(2)>view {
     justify-content: space-between;
 }
 
+imgBtnCmp{
+    height: 60rpx;
+}
+
 .input {
     height: 54rpx;
     font-size: 24rpx;
@@ -138,14 +142,10 @@ tagCmp:nth-child(2)>view {
     padding-left: 28rpx;
 }
 
-.share {
+.share-img {
     width: 38rpx;
     height: 38rpx;
-}
-
-.share>image {
-    width: 100%;
-    height: 100%;
+    padding-bottom: 12rpx;
 }
 
 .comment-container {
@@ -178,11 +178,11 @@ tagCmp:nth-child(2)>view {
     padding: 30rpx 28rpx;
 }
 
-.input-container{
+.input-container {
     padding: 0 28rpx 20rpx;
 }
 
-.input-container > input{
+.input-container>input {
     border-radius: 40rpx;
     background-color: rgb(245, 245, 245);
     padding: 12rpx 28rpx;

@@ -1,3 +1,12 @@
 <view class="container">
-    
+    <view class="header">
+        <text class="tag">{{tag[type]}}</text>
+        <likeCmp isLike="{{isLike}}" count="{{count}}" readOnly="{{true}}"/>
+    </view>
+    <view class="image">
+        <image src="{{imageUrl}}" class="{{type === 200 ? 'music-image' : ''}}"/>
+    </view>
+    <view class="content">
+        <text>{{content}}</text>
+    </view>
 </view>

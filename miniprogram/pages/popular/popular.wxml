@@ -1,7 +1,12 @@
 <view class="container">
     <view class="header">
         <dateCmp index="{{popular.index}}" />
-        <likeCmp class="likeCmp" isLike="{{popular.like_status}}" count="{{popular.fav_nums}}" bind:likeOnTap="likeTap" />
+        <view class="action-btn">
+            <likeCmp class="likeCmp" isLike="{{popular.like_status}}" count="{{popular.fav_nums}}" bind:likeOnTap="likeTap" />
+            <imgBtnCmp openType="share">
+                <image slot="butttonImage" src="../../images/icon/share.png" class="share-img" />
+            </imgBtnCmp>
+        </view>
     </view>
     <view hidden="{{popular.type !== 100}}">
         <movieCmp image="{{popular.image}}" content="{{popular.content}}" />
