@@ -5,7 +5,26 @@
             <imgButtonCmp openType="getUserInfo" bind:getUserInfo="getUserInfo">
                 <image src="{{userInfo ? userInfo.avatarUrl : '../../images/mine/my.png'}}" class="avatar" slot="butttonImage" />
             </imgButtonCmp>
-            <text>{{userInfo.nickName}}</text>
+            <text class="nickName">{{userInfo.nickName}}</text>
         </view>
+        <view class="actions">
+            <view class="action-container">
+                <image src="../../images/mine/about.png" />
+                <text>关于我们</text>
+            </view>
+            <view class="action-container">
+                <text class="number">17</text>
+                <text>收藏数量</text>
+            </view>
+        </view>
+    </view>
+    <view class="like-box">
+        <image class="like-image" src="../../images/mine/like.png" />
+        <!-- <view class="book-container">
+            <block wx:for="{{books}}" wx:key="{{_id}}">
+                <bookCmp book="{{item}}" />
+            </block>
+        </view> -->
+        <collectionCmp />
     </view>
 </view>

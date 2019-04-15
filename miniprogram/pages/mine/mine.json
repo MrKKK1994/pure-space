@@ -1,6 +1,6 @@
 {
     "usingComponents": {
-        "likeCmp": "../../components/like/index",
-        "imgButtonCmp": "../../components/img-button/index"
+        "imgButtonCmp": "../../components/img-button/index",
+        "collectionCmp":"../../components/collection/index"
     }
 }
