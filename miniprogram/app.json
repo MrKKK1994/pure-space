@@ -5,6 +5,9 @@
         "pages/mine/mine",
         "pages/detail/detail"
     ],
+    "requiredBackgroundModes": [
+        "audio"
+    ],
     "window": {
         "navigationBarBackgroundColor": "#fff",
         "navigationBarTextStyle": "black",
